@@ -1,0 +1,34 @@
+{
+    "name": "mstovicek/state-machine",
+    "description": "Simple state machine",
+    "autoload": {
+        "psr-4": {
+            "StateMachine\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-0": {
+            "StateMachine\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "php vendor/bin/phpunit"
+        ]
+    },
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0",
+        "friendsofphp/php-cs-fixer": "1.*"
+    },
+    "config": {
+        "bin-dir": "vendor/bin"
+    },
+    "authors": [
+        {
+            "name": "Milan Stovicek",
+            "email": "stovicek.milan@gmail.com"
+        }
+    ]
+}
