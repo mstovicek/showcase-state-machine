@@ -1,0 +1,21 @@
+{
+    "name": "mstovicek/showcase-state-machine-example-user-account",
+    "authors": [
+        {
+            "name": "Milan Stovicek",
+            "email": "stovicek.milan@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "UserAccount\\": "src/"
+        }
+    },
+    "require": {
+        "mstovicek/state-machine": "dev-master",
+        "symfony/console": "^4.0",
+        "symfony/dependency-injection": "^4.0",
+        "symfony/config": "^4.0",
+        "symfony/yaml": "^4.0"
+    }
+}

@@ -1,0 +1,31 @@
+services:
+
+    state_machine.state_machine:
+        shared: false
+        class: StateMachine\StateMachine
+
+    storage.file_storage:
+        class: UserAccount\Storage\FileStorage
+
+    user_account.state_machine:
+        class: UserAccount\UserAccount\StateMachine
+        arguments:
+              - '@state_machine.state_machine'
+              - '@storage.file_storage'
+
+    # Commands
+
+    command.get:
+        class: UserAccount\Command\Get
+        arguments:
+            - '@user_account.state_machine'
+
+    command.set:
+        class: UserAccount\Command\Set
+        arguments:
+            - '@user_account.state_machine'
+
+    command.reset:
+        class: UserAccount\Command\Reset
+        arguments:
+            - '@storage.file_storage'
