@@ -44,4 +44,24 @@ class StateMachineTest extends TestCase
         $this->assertTrue($stateMachine->canTransit('b', 'c'));
         $this->assertFalse($stateMachine->canTransit('c', 'a'));
     }
+
+    public function testAllowTransitionThrowsStateNotAllowedException()
+    {
+        $this->expectException(StateNotAllowed::class);
+        $this->expectExceptionMessage('State "b" is not allowed');
+
+        $stateMachine = new StateMachine();
+        $stateMachine->allowStates(['a']);
+        $stateMachine->allowTransition('a', 'b');
+    }
+
+    public function testCanTransitThrowsStateNotAllowedException()
+    {
+        $this->expectException(StateNotAllowed::class);
+        $this->expectExceptionMessage('State "b" is not allowed');
+
+        $stateMachine = new StateMachine();
+        $stateMachine->allowStates(['a']);
+        $stateMachine->canTransit('a', 'b');
+    }
 }
