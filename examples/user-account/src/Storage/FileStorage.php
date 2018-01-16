@@ -22,6 +22,8 @@ class FileStorage implements StorageInterface
 
     public function reset()
     {
-        unlink(static::FILENAME);
+        if (file_exists(static::FILENAME)) {
+            unlink(static::FILENAME);
+        }
     }
 }
