@@ -52,7 +52,7 @@ $ composer tests
 ### Run example
 
 ```
-$ cd exemples/user-account
+$ cd examples/user-account
 
 # install dependencies, incl. mstovicek/state-machine
 $ composer install
